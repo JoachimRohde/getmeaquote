@@ -32,6 +32,8 @@ Remarks
 -------
 I planned to add more data providers before releasing this but I guess since several years has already passed this won't be happening any time soon. If you find this somehow useful, drop me a line.
 
+A precompiled version can be downloaded here: http://www.joachimrohde.com/downloads/GetMeAQuote-0.1.jar
+
 Licence
 -------
    Copyright 2014 Joachim F. Rohde
