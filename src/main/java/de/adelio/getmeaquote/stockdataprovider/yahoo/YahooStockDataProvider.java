@@ -119,14 +119,22 @@ public class YahooStockDataProvider implements StockDataProvider
      *
      * @param symbol the symbol of the stock
      * @param date the date for which the data should be fetch
-     * @return a historical quote for the specified stock on a given date
+     * @return a historical quote for the specified stock on a given date or
+     * null if no date could be retrieved
      * @throws IOException if something goes wrong while fetching the data
      * @see de.adelio.getmeaquote.HistoricalQuote
      */
     public HistoricalQuote getHistoricalQuote(String symbol, Date date) throws IOException
     {
         List<HistoricalQuote> hq = getHistoricalQuotes(symbol, date, date, "d");
-        return getHistoricalQuotes(symbol, date, date, "d").get(0);
+        if (hq.isEmpty())
+        {
+            return null;
+        }
+        else
+        {
+            return getHistoricalQuotes(symbol, date, date, "d").get(0);
+        }
     }
 
     /**
