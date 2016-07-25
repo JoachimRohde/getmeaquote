@@ -30,6 +30,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.xpath.XPath;
@@ -155,7 +157,9 @@ public class YahooStockDataProvider implements StockDataProvider
         symbol = "%22" + symbol + "%22";
         try
         {
-            URL yahoo = new URL("http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(" + symbol + ")%0A%09%09&diagnostics=true&env=http%3A%2F%2Fdatatables.org%2Falltables.env");
+            final String url = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(" + symbol + ")%0A%09%09&diagnostics=true&env=http%3A%2F%2Fdatatables.org%2Falltables.env";
+            Logger.getLogger(YahooStockDataProvider.class.getName()).log(Level.FINE, "FetchData for " + symbol + ". URL: " + symbol);
+            URL yahoo = new URL(url);
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder db = dbf.newDocumentBuilder();
             Document doc = db.parse(yahoo.openStream());
