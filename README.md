@@ -1,5 +1,13 @@
-Get me a quote
+Get me a quote (deprecated)
 ==============
+
+Update
+------------
+Since Yahoo pulled more or less the plug on this API and it can only be used with a workaround, this library deprecated.
+You should use a library which implements this workaround like https://github.com/sstrickx/yahoofinance-api which works pretty fine.
+
+If you are interested about the details read https://stackoverflow.com/questions/44030983/yahoo-finance-url-not-working
+
 
 Overview
 ------------
